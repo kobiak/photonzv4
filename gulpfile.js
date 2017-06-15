@@ -29,7 +29,7 @@ var browsersync = false;
 
 // PHP settings
 const php = {
-    src: dir.src + 'template/**/*.php',
+    src: dir.src + 'template/**/*',
     build: dir.build
 };
 
