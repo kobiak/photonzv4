@@ -29,7 +29,7 @@
         })();
 
     </script>
-    <script type='text/javascript'>
+   <!-- <script type='text/javascript'>
         ! function(a) {
             "use strict";
             var b = function(b, c, d) {
@@ -65,10 +65,10 @@
             "undefined" != typeof exports ? exports.loadCSS = b : a.loadCSS = b
         }("undefined" != typeof global ? global : this);
 
-    </script>
-    <script type='text/javascript'>
+    </script>-->
+   <!-- <script type='text/javascript'>
         loadCSS("<?php echo get_stylesheet_directory_uri(); ?>/style.css");
-    </script>
+    </script>-->
 
     </body>
 
