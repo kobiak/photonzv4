@@ -11,8 +11,8 @@
             <?php endwhile; endif; ?>
                             
             <footer class="footer">
-                                <?php get_template_part( 'nav', 'below-single' ); ?>
-                            </footer>
+                <?php get_template_part( 'nav', 'below-single' ); ?>
+            </footer>
         </div>
         <div class="single-map"><?php echo GeoMashup::map() ?></div>
     </section>

@@ -2,6 +2,17 @@
 <section id="content" role="main">
     <div class="wrap-inner">
         <div class="articles" itemscope itemtype="http://schema.org/Blog">
+           
+           <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $page_num = $paged;
+                if( $paged >1 ) 
+                    $showposts = 12; 
+                else 
+                    $showposts = 13;
+                    query_posts('showposts=' .$showposts. '&paged='.$page_num);
+                ?>
+           
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
             <?php if( $wp_query->current_post == 0 && !is_paged() && ( is_home() || is_archive() ) ) : ?>

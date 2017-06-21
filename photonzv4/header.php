@@ -40,8 +40,9 @@
     <div id="mobile-menu-wrap"></div>
     <header class="header" role="header">
         <div class="wrap-inner">
-            <a href="#" class="mobile-menu-button" id="js-open-menu"></a>
-            <nav class="menu" role="navigation" id="mobile-menu">
+            <a href="#" class="mobile-menu-open" id="js-open-menu"></a>
+            <nav class="mobile-menu" role="navigation" id="mobile-menu">
+                <a href="#" class="mobile-menu-close" id="js-close-menu"></a>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
             </nav>
         </div>
