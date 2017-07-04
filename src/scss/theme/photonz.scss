@@ -373,6 +373,9 @@ ol {
             line-height: 1.3;
         }
     }
+    .nav-next {
+        text-align: right;
+    }
 }
 
 .single-map {
@@ -383,6 +386,12 @@ ol {
         padding:0 0 0 0;
         margin:0;
     }
+}
+
+.single-comments {
+    max-width: 960px;
+    margin: 0 auto 2rem auto;
+    width: 100%;
 }
 
 .site-footer {
