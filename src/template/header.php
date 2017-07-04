@@ -11,33 +11,31 @@
     <link rel="preconnect" href="//img-fotki.yandex.ru">
     <link rel="preconnect" href="//ajax.googleapis.com">
     <link rel="preconnect" href="//fonts.googleapis.com">
-
-    <!-- <link rel="preload" href="<?php //echo get_stylesheet_directory_uri(); ?>/style.css" as="style" onload="this.rel='stylesheet'">-->
+   
     <meta name="google-site-verification" content="7u4TZ5YPCoAKTGC2v-yZ5Emw5AfhrYIGCQbDuXuhi78" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
     <meta name="theme-color" content="#000000">
 
-    <?php
-        $inlineCss = file_get_contents(get_template_directory_uri().'/inline.css');
-       
-    ?>
+    <?php $inlineCss = file_get_contents(get_template_directory_uri().'/inline.css'); ?>
+    
+    <style>
+        <?php echo $inlineCss; ?>
+    </style>
 
-        <style>
-            <?php echo $inlineCss;            ?>
-
-        </style>
-
-        <?php wp_head(); ?>
-        <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async></script>
+    <?php wp_head(); ?>
+    <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async></script>
 </head>
 
 <body <?php body_class(); ?>>
+   
     <div id="mobile-menu-wrap"></div>
+    
     <header class="header" role="header">
         <div class="wrap-inner">
             <a href="#" class="mobile-menu-open" id="js-open-menu"></a>
@@ -46,5 +44,4 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
             </nav>
         </div>
-
     </header>

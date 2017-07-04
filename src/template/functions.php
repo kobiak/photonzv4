@@ -4,21 +4,34 @@
 			load_theme_textdomain( 'photonz', get_template_directory() . '/languages' );
 		   
 			add_theme_support( 'title-tag' );
-			add_theme_support( 'automatic-feed-links' );
-		   
-			
-		   
+			add_theme_support( 'automatic-feed-links' ); 
 			
 			global $content_width;
 			
-			if ( ! isset( $content_width ) ) $content_width = 640;
-			
+			if ( ! isset( $content_width ) ) $content_width = 640;			
 			
 	}
 
-//remove emoji
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    //remove emoji
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+    // add the action
+    add_action('wp_enqueue_scripts', 'remove_default_styles');
+
+    function remove_default_styles ()
+    {
+        // get all styles data
+        global $wp_styles;
+
+        // loop over all of the registered scripts
+        foreach ($wp_styles->registered as $handle => $data)
+        {
+            // remove it
+            wp_deregister_style($handle);
+            wp_dequeue_style($handle);
+        }
+    }
 
 	 // This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
@@ -34,7 +47,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	add_action( 'wp_enqueue_scripts', 'photonz_load_scripts' );
 
 	function photonz_load_scripts() {
-		wp_enqueue_script( 'jquery' );
+		//wp_enqueue_script( 'jquery' );
 	}
 
 	add_action( 'comment_form_before', 'photonz_enqueue_comment_reply_script' );

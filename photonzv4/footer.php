@@ -9,7 +9,7 @@
 
 </footer>
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 
 
     <script type="text/javascript">
@@ -32,5 +32,5 @@
    
 
     </body>
-
-    </html>
+    
+</html>
