@@ -137,10 +137,13 @@ gulp.task('browsersync', () => {
 });
 
 // watch for file changes
-gulp.task('watch', ['browsersync'], () => {
+/*gulp.task('watch', ['browsersync'], () => {*/
+    
+gulp.task('watch', () => {
 
     // page changes
-    gulp.watch(php.src, ['php'], browsersync ? browsersync.reload : {});
+    /*gulp.watch(php.src, ['php'], browsersync ? browsersync.reload : {});*/
+    gulp.watch(php.src, ['php']);
 
     // image changes
     gulp.watch(images.src, ['images']);

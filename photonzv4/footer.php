@@ -1,10 +1,10 @@
 <footer id="footer" role="contentinfo" class="site-footer">
-    <div class="site-footer-content">
-        <div><?php dynamic_sidebar( 'bottom-1' ); ?></div>
-        <div><?php dynamic_sidebar( 'bottom-2' ); ?></div>
-        <div><?php dynamic_sidebar( 'bottom-3' ); ?></div>
-        <div><?php dynamic_sidebar( 'bottom-4' ); ?></div>
-    </div>
+    <!--<div class="site-footer-content">
+        <div><?php// dynamic_sidebar( 'bottom-1' ); ?></div>
+        <div><?php// dynamic_sidebar( 'bottom-2' ); ?></div>
+        <div><?php// dynamic_sidebar( 'bottom-3' ); ?></div>
+        <div><?php// dynamic_sidebar( 'bottom-4' ); ?></div>
+    </div>-->
     <div class="copyright">Сделано <a href="https://evgenyk.nz" target="_blank" rel="noopener">EvgenyK</a></div>
 
 </footer>

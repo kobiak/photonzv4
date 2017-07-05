@@ -20,13 +20,9 @@
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-    <meta name="theme-color" content="#000000">
-
-    <?php $inlineCss = file_get_contents(get_template_directory_uri().'/inline.css'); ?>
+    <meta name="theme-color" content="#000000">   
     
-    <style>
-        <?php echo $inlineCss; ?>
-    </style>
+    <style><?php include 'inline.css' ?></style>
 
     <?php wp_head(); ?>
     <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async></script>
