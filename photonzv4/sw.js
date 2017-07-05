@@ -1,11 +1,11 @@
 "use strict";
 
-var version = 'v1.1.0:';
+var version = 'v1.1.2:';
 
 var theme_path = 'wp-content/themes/photonzv4/';
 
 var offlineFundamentals = [
-	'',
+	'./',
 	//theme_path + 'style.css',
     theme_path + 'offline.html'
 
