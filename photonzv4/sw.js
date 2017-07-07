@@ -1,6 +1,6 @@
 "use strict";
 
-var version = 'v1.1.2:';
+var version = 'v1.1.3:';
 
 var theme_path = 'wp-content/themes/photonzv4/';
 

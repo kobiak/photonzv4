@@ -100,7 +100,7 @@ ol {
                 }
                 .feature-post-content {
                     position: relative;
-                    margin: 0 0;
+                    margin: -2rem 0 0 0;
                     bottom: auto;
                     left: auto;
                     right: auto;
@@ -115,7 +115,10 @@ ol {
                     background: none;
                     font-size: 1rem;
                     color: #222;
-                    padding: 0 0 0 0;
+                    padding: 0 1rem;
+                    p {
+                        margin:1rem 0;
+                    }
                 }
             }
         }
@@ -490,7 +493,10 @@ ol {
     }
     .articles {
         .post {
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
+            p {
+                margin:1rem 0;
+            }
         }
     }
     .single-post {
