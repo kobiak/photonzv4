@@ -9,28 +9,46 @@
 
 </footer>
 
-    <?php wp_footer(); ?>
+<?php wp_footer(); ?>
 
 
-    <script type="text/javascript">
-        WebFontConfig = {
-            google: {
-                families: ['PT+Sans:400,700']
-            }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
+<script type="text/javascript">
+    WebFontConfig = {
+        google: {
+            families: ['PT+Sans:400,700']
+        }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
 
-    </script>
-   
+</script>
 
-    </body>
-    
+<script type="text/javascript">
+    (function(w, doc) {
+        if (!w.__utlWdgt) {
+            w.__utlWdgt = true;
+            var d = doc,
+                s = d.createElement('script'),
+                g = 'getElementsByTagName';
+            s.type = 'text/javascript';
+            s.charset = 'UTF-8';
+            s.async = true;
+            s.src = ('https:' == w.location.protocol ? 'https' : 'http') + '://w.uptolike.com/widgets/v1/uptolike.js';
+            var h = d[g]('body')[0];
+            h.appendChild(s);
+        }
+    })(window, document);
+
+</script>
+
+
+</body>
+
 </html>
