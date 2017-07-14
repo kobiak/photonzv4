@@ -9,6 +9,10 @@
 
 </footer>
 
+<aside class="search-popup" style="display:none;" id="search-popup">
+   <div class="wrap-inner"><?php get_search_form(); ?></div>    
+</aside>
+
 <?php wp_footer(); ?>
 
 

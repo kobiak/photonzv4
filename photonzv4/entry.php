@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <?php if ( is_home() || is_archive() ) { ?>
+        <?php if ( is_home() || is_archive() || is_search() ) { ?>
         <section class="entry-thumb" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
             <?php  if ( has_post_thumbnail() )  { the_post_thumbnail(); }; ?>

@@ -28,7 +28,7 @@
     <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async></script>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="body" <?php body_class(); ?>>
    
     <div id="mobile-menu-wrap"></div>
     
@@ -37,7 +37,8 @@
             <a href="#" class="mobile-menu-open" id="js-open-menu"></a>
             <nav class="mobile-menu" role="navigation" id="mobile-menu">
                 <a href="#" class="mobile-menu-close" id="js-close-menu"></a>
-                <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>                
             </nav>
+            <a href="#" class="search-button" title="Кликнуть для поиска" id="js-search-button"></a>
         </div>
     </header>
