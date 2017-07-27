@@ -1,4 +1,4 @@
-<section class="entry-content">
+<div class="entry-content">
 
     <?php if ( is_singular() ) 
         { 
@@ -12,4 +12,4 @@
         <div class="entry-links">
             <?php wp_link_pages(); ?>
         </div>
-</section>
+</div>

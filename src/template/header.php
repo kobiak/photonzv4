@@ -32,7 +32,7 @@
    
     <div id="mobile-menu-wrap"></div>
     
-    <header class="header" role="header">
+    <header class="header">
         <div class="wrap-inner">
             <a href="#" class="mobile-menu-open" id="js-open-menu"></a>
             <nav class="mobile-menu" role="navigation" id="mobile-menu">

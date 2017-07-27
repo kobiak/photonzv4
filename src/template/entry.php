@@ -1,14 +1,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         <?php if ( is_home() || is_archive() || is_search() ) { ?>
-        <section class="entry-thumb" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <div class="entry-thumb" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
             <?php  if ( has_post_thumbnail() )  { the_post_thumbnail(); }; ?>
             </a>
             <meta itemprop="url" content="<?php the_post_thumbnail_url() ?> ">
             <meta itemprop="width" content="300">
             <meta itemprop="height" content="200">
-        </section>
+        </div>
         <?php } ?>
 
 
@@ -43,7 +43,7 @@
 
     <?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
 
-    <?php// if (( !is_search() ) && ( is_singular() )) get_template_part( 'entry-footer' ); ?>
+    
 </article>
 <?php if ( is_singular() ) 
 {

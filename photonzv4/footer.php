@@ -1,4 +1,4 @@
-<footer id="footer" role="contentinfo" class="site-footer">
+<footer id="footer" class="site-footer">
     <!--<div class="site-footer-content">
         <div><?php// dynamic_sidebar( 'bottom-1' ); ?></div>
         <div><?php// dynamic_sidebar( 'bottom-2' ); ?></div>

@@ -1,13 +1,13 @@
-<section class="entry-meta">
+<div class="entry-meta">
 
     <?php if ( is_singular() ) 
         { ?>
-    <div class="meta-date"><span class="entry-date updated" itemprop="datePublished" datetime="<?php the_time('Y-m-d') ?>" content="<?php the_time('Y-m-d') ?>" pubdate><?php the_time( get_option( 'date_format' ) ); ?></span></div>
+    <div class="meta-date"><span class="entry-date updated" itemprop="datePublished"  content="<?php the_time('Y-m-d') ?>" ><time datetime="<?php the_time('Y-m-d') ?>" ><?php the_time( get_option( 'date_format' ) ); ?></time></span></div>
     <div class="meta-tags"><span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></div>
     <?php
         } else { 
     ?>
-        <div class="meta-date"><span class="entry-date updated" itemprop="datePublished" datetime="<?php the_time('Y-m-d') ?>" itemprop="datePublished" content="<?php the_time('Y-m-d') ?>" pubdate><?php the_time( get_option( 'date_format' ) ); ?></span></div>
+        <div class="meta-date"><span class="entry-date updated"  itemprop="datePublished" content="<?php the_time('Y-m-d') ?>"><time datetime="<?php the_time('Y-m-d') ?>" ><?php the_time( get_option( 'date_format' ) ); ?></time></span></div>
 
         <?php } ?>
         <meta itemprop="mainEntityOfPage" content="<?php the_permalink(); ?>">
@@ -31,4 +31,4 @@
         </span>
 
 
-</section>
+</div>
