@@ -34,9 +34,9 @@
     
     <header class="header">
         <div class="wrap-inner">
-            <a href="#" class="mobile-menu-open" id="js-open-menu"></a>
+            <a href="#" class="mobile-menu-open" id="js-open-menu" title="Open menu"></a>
             <nav class="mobile-menu" role="navigation" id="mobile-menu">
-                <a href="#" class="mobile-menu-close" id="js-close-menu"></a>
+                <a href="#" class="mobile-menu-close" id="js-close-menu" title="Close menu"></a>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>                
             </nav>
             <a href="#" class="search-button" title="Кликнуть для поиска" id="js-search-button"></a>
