@@ -72,6 +72,8 @@ ol {
         background-color: #fff;
         margin-bottom: 2rem;
         position: relative;
+        display: flex;
+        flex-direction: column;
         &.featured-post {
             width: 100%;
             img {
@@ -135,20 +137,36 @@ ol {
                     }
                 }
             }
+            .entry-meta {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                display: inline-block;
+                background-color: rgba(0, 0, 0, 1);
+                font-size: 1rem;
+                padding: 0.5rem;
+                color: #fff;
+                border-top: none;
+
+            }
         }
         .entry-content,
         .entry-summary {
             padding: 0 1rem;
         }
         .entry-meta {
-            position: absolute;
+            /*position: absolute;
             top: 1rem;
             right: 1rem;
             display: inline-block;
             background-color: rgba(0, 0, 0, 1);
             font-size: 1rem;
             padding: 0.5rem;
-            color: #fff;
+            color: #fff;*/
+            margin: auto 1rem 0 1rem;
+            border-top: 1px solid #ccc;
+            padding: 0.5rem 0;
+            font-size: 0.750rem;
         }
     }
     header {
@@ -193,7 +211,7 @@ ol {
             max-width: 900px;
             height: auto;
             border-radius: 5px;
-            border: 1px solid #eee;
+            border: none !important;
         }
     }
 }
@@ -204,7 +222,7 @@ ol {
         display: flex;
         min-height: 48px;
         flex-wrap: nowrap;
-        >li {
+        > li {
             display: flex;
             align-items: stretch
         }
@@ -289,7 +307,7 @@ ol {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        >div {
+        > div {
             width: 100%;
             max-width: 300px;
             margin-bottom: 1em;
@@ -396,7 +414,7 @@ ol {
     flex-wrap: nowrap;
     justify-content: space-between;
     font-size: 1.5em;
-    >div {
+    > div {
         width: 50%;
         @media (max-width: 767px) {
             font-size: 1rem;
@@ -541,10 +559,10 @@ ol {
         z-index: 101;
         #menu-header-menu {
             flex-direction: column;
-            >li {
+            > li {
                 line-height: 40px;
                 border-bottom: 1px solid #444;
-                >a {
+                > a {
                     width: 100%;
                 }
             }

@@ -25,7 +25,7 @@
     <style><?php include 'inline.css' ?></style>
 
     <?php wp_head(); ?>
-    <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async></script>
+    <script type='text/javascript' src="<?php echo get_stylesheet_directory_uri(); ?>/js/photonz.min.js" async defer></script>
 </head>
 
 <body id="body" <?php body_class(); ?>>
