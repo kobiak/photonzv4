@@ -39,10 +39,10 @@
         <?php if ( is_singular() ) {  edit_post_link(); } ?>
 
     </header>
-    
+    <?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
 
     <?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
-    <?php get_template_part( 'entry', 'meta' ); ?>
+
     
 </article>
 <?php if ( is_singular() ) 

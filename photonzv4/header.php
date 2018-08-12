@@ -13,6 +13,7 @@
     <link rel="preconnect" href="//fonts.googleapis.com">
    
     <meta name="google-site-verification" content="7u4TZ5YPCoAKTGC2v-yZ5Emw5AfhrYIGCQbDuXuhi78" />
+    <meta name="yandex-verification" content="f42487b9dd51f94f" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
