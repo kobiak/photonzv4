@@ -21,7 +21,10 @@ const
     deporder = require('gulp-deporder'),
     concat = require('gulp-concat'),
     stripdebug = require('gulp-strip-debug'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+
+    // service worker
+    workboxBuild = require('workbox-build');
 
 // Browser-sync
 var browsersync = false;
@@ -112,8 +115,50 @@ gulp.task('js', () => {
 
 });
 
+gulp.task('sw', () => {
+    return workboxBuild.generateSW({
+        globDirectory: 'photonzv4',
+        globPatterns: [
+          '**\/*.{html,json,js}',
+            /*'images\/*.{jpg,png,ico}',
+            'images\/tools\/*.{jpg,png,ico}',
+            'favicon\/*.{jpg,png,ico}',*/
+        ],
+        swDest: 'photonzv4/sw.js',
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [{
+            urlPattern: new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+            handler: 'cacheFirst'
+            
+        }, {
+            urlPattern: /\//,
+            handler: 'staleWhileRevalidate'
+        },{
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'staleWhileRevalidate'
+        }, {
+            urlPattern: /\.(?:png|gif|jpg|jpeg|svg)$/,
+            handler: 'cacheFirst'
+        }, {
+            urlPattern: new RegExp('https://photonz.ru/wp-admin/(.*)'),
+            handler: 'networkOnly'
+        }]
+    }).then(({
+        warnings
+    }) => {
+        // In case there are any warnings from workbox-build, log them.
+        for (const warning of warnings) {
+            console.warn(warning);
+        }
+        console.info('Service worker generation completed.');
+    }).catch((error) => {
+        console.warn('Service worker generation failed:', error);
+    });
+});
+
 // run all tasks
-gulp.task('build', ['php', 'css', 'js']);
+gulp.task('build', ['php', 'css', 'js', 'sw']);
 
 // Browsersync options
 const syncOpts = {

@@ -1,39 +1,39 @@
-var searchPopup = document.getElementById("search-popup"),
-    searchButton = document.getElementById("js-search-button"),
-    menuOpen = document.getElementById("js-open-menu"),
-    menuClose = document.getElementById("js-close-menu")
-    menuMobile = document.getElementById("mobile-menu");
+var searchPopup = document.getElementById('search-popup'),
+    searchButton = document.getElementById('js-search-button'),
+    menuOpen = document.getElementById('js-open-menu'),
+    menuClose = document.getElementById('js-close-menu'),
+    menuMobile = document.getElementById('mobile-menu');
 
-menuOpen.addEventListener("click", function (e) {
+menuOpen.addEventListener('click', function (e) {
     e.preventDefault();
-    menuMobile.style.left = "0";
-    menuClose.style.display = "block";
+    menuMobile.style.left = '0';
+    menuClose.style.display = 'block';
 });
 
-menuClose.addEventListener("click", function (e) {
+menuClose.addEventListener('click', function (e) {
     e.preventDefault();
-    menuMobile.removeAttribute("style");
-    menuClose.removeAttribute("style");
+    menuMobile.removeAttribute('style');
+    menuClose.removeAttribute('style');
 });
 
-searchButton.addEventListener("click", function (e) {
+searchButton.addEventListener('click', function (e) {
     e.preventDefault();
-    searchPopup.style.display = "block";
-    /*document.getElementById("body").style.overflow = "hidden";*/
-    document.getElementById("search-input").focus();
+    searchPopup.style.display = 'block';
+    /*document.getElementById('body').style.overflow = 'hidden';*/
+    document.getElementById('search-input').focus();
 });
 
 document.querySelector('body').addEventListener('click', function(event) {
   if (event.target === searchPopup) { 
-      event.target.style.display = "none";  
+      event.target.style.display = 'none';  
   }
 });
 
-/*searchPopup.addEventListener("click", function (e) {
+/*searchPopup.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopImmediatePropagation();
     e.stopPropagation();
-    searchPopup.style.display = "none";    
+    searchPopup.style.display = 'none';    
 });*/
 
 if ('serviceWorker' in navigator) {
@@ -42,7 +42,7 @@ if ('serviceWorker' in navigator) {
     }).then(function (reg) {
         console.log('Service Worker Registered', reg);
     }, function (err) {
-        console.log("Service Worker Register fail", err);
+        console.log('Service Worker Register fail', err);
     });
 }
 
