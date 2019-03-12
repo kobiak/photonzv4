@@ -38,4 +38,4 @@ workbox.routing.registerRoute(/https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/
 workbox.routing.registerRoute(/\//, workbox.strategies.staleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/\.(?:js|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/\.(?:png|gif|jpg|jpeg|svg)$/, workbox.strategies.cacheFirst(), 'GET');
-workbox.routing.registerRoute(/https:\/\/photonz.ru\/wp-admin\/(.*)/, workbox.strategies.networkOnly(), 'GET');
+workbox.routing.registerRoute(/\/(https:\/\/)+?(.[A-Za-z0-9]+.)+(\/wp-admin\/)+?(.*)\/ig/, workbox.strategies.networkOnly(), 'GET');

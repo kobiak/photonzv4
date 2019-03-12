@@ -141,7 +141,7 @@ gulp.task('sw', () => {
             urlPattern: /\.(?:png|gif|jpg|jpeg|svg)$/,
             handler: 'cacheFirst'
         }, {
-            urlPattern: new RegExp('https://photonz.ru/wp-admin/(.*)'),
+            urlPattern: new RegExp('/(https:\/\/)+?(.[A-Za-z0-9]+.)+(\/wp-admin\/)+?(.*)/ig'),
             handler: 'networkOnly'
         }]
     }).then(({
