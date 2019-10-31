@@ -19,7 +19,7 @@
             </footer>
         </div>
         <div class="single-map"><?php echo GeoMashup::map() ?></div>
-        <div class="single-comments"><?php comments_template('', true); ?></div>
+        <div class="single-comments"><?php // comments_template('', true); ?></div>
     </section>
 <?php //get_sidebar(); ?>
 <?php get_footer(); ?>

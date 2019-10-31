@@ -41,6 +41,7 @@ gulp.task('php', () => {
     return gulp.src(php.src)
         .pipe(newer(php.build))
         .pipe(gulp.dest(php.build));
+
 });
 
 // image settings
@@ -69,21 +70,21 @@ var css = {
         errLogToConsole: true
     },
     processors: [
-    require('postcss-assets')({
+        require('postcss-assets')({
             loadPaths: ['images/'],
             basePath: dir.build,
             baseUrl: '/wp-content/themes/' + themeName + '/'
         }),
-    require('autoprefixer')({
-            browsers: ['last 2 versions', '> 2%']
-        }),
-    require('css-mqpacker'),
-    require('cssnano')
+       /* require('autoprefixer')({
+                browsers: ['last 2 versions', '> 2%']
+            }),*/
+        require('css-mqpacker'),
+        require('cssnano')
   ]
 };
 
 // CSS processing
-gulp.task('css', ['images'], () => {
+gulp.task('css', gulp.series('images', () => {
     return gulp.src(css.src)
         .pipe(sass(css.sassOpts))
         .pipe(postcss(css.processors))
@@ -91,7 +92,7 @@ gulp.task('css', ['images'], () => {
         .pipe(browsersync ? browsersync.reload({
             stream: true
         }) : gutil.noop());
-});
+}));
 
 // JavaScript settings
 const js = {
@@ -115,6 +116,7 @@ gulp.task('js', () => {
 
 });
 
+// ServiceWorker processing
 gulp.task('sw', () => {
     return workboxBuild.generateSW({
         globDirectory: 'photonzv4',
@@ -129,20 +131,26 @@ gulp.task('sw', () => {
         skipWaiting: true,
         runtimeCaching: [{
             urlPattern: new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-            handler: 'cacheFirst'
-            
+            handler: 'CacheFirst'
+
         }, {
-            urlPattern: /\//,
-            handler: 'staleWhileRevalidate'
-        },{
             urlPattern: /\.(?:js|css)$/,
-            handler: 'staleWhileRevalidate'
+            handler: 'StaleWhileRevalidate'
         }, {
             urlPattern: /\.(?:png|gif|jpg|jpeg|svg)$/,
-            handler: 'cacheFirst'
+            handler: 'CacheFirst',
+            options: {
+                // Use a custom cache name.
+                cacheName: 'images',
+
+                // Only cache 10 images.
+                expiration: {
+                    maxEntries: 50,
+                },
+            },
         }, {
             urlPattern: new RegExp('/(https:\/\/)+?(.[A-Za-z0-9]+.)+(\/wp-admin\/)+?(.*)/ig'),
-            handler: 'networkOnly'
+            handler: 'NetworkOnly'
         }]
     }).then(({
         warnings
@@ -158,32 +166,34 @@ gulp.task('sw', () => {
 });
 
 // run all tasks
-gulp.task('build', ['php', 'css', 'js', 'sw']);
+gulp.task('build', gulp.series('php', 'css', 'js', 'sw', (done) => {
+    done();
+}));
 
-// Browsersync options
-const syncOpts = {
-    proxy: 'localhost',
-    files: dir.build + '**/*',
-    open: false,
-    notify: false,
-    ghostMode: false,
-    ui: {
-        port: 8001
-    }
-};
-
-
-// browser-sync
-gulp.task('browsersync', () => {
-    if (browsersync === false) {
-        browsersync = require('browser-sync').create();
-        browsersync.init(syncOpts);
-    }
-});
-
-// watch for file changes
-/*gulp.task('watch', ['browsersync'], () => {*/
-    
+//// Browsersync options
+//const syncOpts = {
+//    proxy: 'localhost',
+//    files: dir.build + '**/*',
+//    open: false,
+//    notify: false,
+//    ghostMode: false,
+//    ui: {
+//        port: 8001
+//    }
+//};
+//
+//
+//// browser-sync
+//gulp.task('browsersync', () => {
+//    if (browsersync === false) {
+//        browsersync = require('browser-sync').create();
+//        browsersync.init(syncOpts);
+//    }
+//});
+//
+//// watch for file changes
+///*gulp.task('watch', ['browsersync'], () => {*/
+//
 gulp.task('watch', () => {
 
     // page changes
@@ -202,4 +212,6 @@ gulp.task('watch', () => {
 });
 
 // default task
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', gulp.series('build', 'watch', (done) => {
+    done()
+}));
