@@ -7,6 +7,13 @@
     </title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="<?php if ( is_single() ) {
+       echo get_the_excerpt();
+    } else {
+        bloginfo('description');
+    }
+    ?>" />
 
     <link rel="preconnect" href="//img-fotki.yandex.ru">
     <link rel="preconnect" href="//ajax.googleapis.com">
